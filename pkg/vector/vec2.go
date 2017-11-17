@@ -36,6 +36,7 @@ func (l Vec2) Mul(r Vec2) Vec2 {
 	}
 }
 
+// ScalarMul returns the product of the vector with a scalar
 func (l *Vec2) ScalarMul(r float64) Vec2 {
 	return Vec2{
 		X: l.X * r,
@@ -43,14 +44,17 @@ func (l *Vec2) ScalarMul(r float64) Vec2 {
 	}
 }
 
+// Dot returns the dot product of vectors
 func (l *Vec2) Dot(r Vec2) float64 {
 	return l.X*r.X + l.Y*r.Y
 }
 
+// Magnitude returns the magnitude of a vector
 func (v *Vec2) Magnitude() float64 {
 	return math.Sqrt(v.Dot(*v))
 }
 
+// MagnitudeSq returns the squared magnitude of a vector
 func (v *Vec2) MagnitudeSq() float64 {
 	return v.Dot(*v)
 }
