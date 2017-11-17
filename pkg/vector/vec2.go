@@ -7,10 +7,12 @@ type Vec2 struct {
 	Y float64
 }
 
+// Equals returns true if vectors are equal
 func (l Vec2) Equals(r Vec2) bool {
 	return FloatEquals(l.X, r.X) && FloatEquals(l.Y, r.Y)
 }
 
+// Add returns the sum of vectors
 func (l Vec2) Add(r Vec2) Vec2 {
 	return Vec2{
 		X: l.X + r.X,
@@ -18,6 +20,7 @@ func (l Vec2) Add(r Vec2) Vec2 {
 	}
 }
 
+// Sub returns the difference of vectors
 func (l Vec2) Sub(r Vec2) Vec2 {
 	return Vec2{
 		X: l.X - r.X,
@@ -25,6 +28,7 @@ func (l Vec2) Sub(r Vec2) Vec2 {
 	}
 }
 
+// Mul returns the product of vectors
 func (l Vec2) Mul(r Vec2) Vec2 {
 	return Vec2{
 		X: l.X * r.X,
