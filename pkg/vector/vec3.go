@@ -1,5 +1,7 @@
 package vector
 
+import "math"
+
 type Vec3 struct {
 	X float64
 	Y float64
@@ -44,4 +46,12 @@ func (l *Vec3) ScalarMul(r float64) Vec3 {
 
 func (l *Vec3) Dot(r Vec3) float64 {
 	return l.X*r.X + l.Y*r.Y + l.Z*r.Z
+}
+
+func (v *Vec3) Magnitude() float64 {
+	return math.Sqrt(v.Dot(*v))
+}
+
+func (v *Vec3) MagnitudeSq() float64 {
+	return v.Dot(*v)
 }
